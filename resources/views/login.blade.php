@@ -6,6 +6,7 @@
 <title>Login Perpustakaan Madani</title>
 
 <link rel="stylesheet" href="{{ asset('/css/bootstrap-5.3.8-dist/css/bootstrap.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/app.css') }}">
 
 <style>
 body{
