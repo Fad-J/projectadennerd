@@ -20,12 +20,14 @@ class UserTableSeeder extends Seeder
         if (DB::table('user')->count() == 0) {
             $hash = Hash::make('admin123');
             $split = str_split($hash, 30);
-            DB::table('user')->insert([
-                'username' => 'admin',
+            DB::table('user')->updateOrinsert(
+                ['username' => 'admin'],
+                [
                 'password' => $split[0],
                 'extend'   => $split[1],
                 'status'   => 'admin'
-            ]);
+                ]
+            );
         }
     }
 }
