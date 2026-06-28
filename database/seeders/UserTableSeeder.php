@@ -39,6 +39,17 @@ class UserTableSeeder extends Seeder
                 'status'   => 'admin'
                 ]
             );
+            // Tambah akun user default
+            $hash2 = Hash::make('user123');
+            $split2 = str_split($hash2, 30);
+            DB::table('user')->updateOrInsert(
+                ['username' => 'user1'],
+                [
+                    'password' => $split2[0],
+                    'extend'   => $split2[1],
+                    'status'   => 'user'
+                ]
+            );
         }
     }
 }
