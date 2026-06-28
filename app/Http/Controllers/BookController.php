@@ -13,7 +13,7 @@ class BookController extends Controller
     {
         $totalBuku = DB::table('books')->count();
 
-        $totalUser = DB::table('user')->count();
+        $totalUser = DB::table('users')->count();
 
         $totalKategori = DB::table('books')
                             ->distinct()
