@@ -1,1 +1,1 @@
-web: php artisan storage:link && php -S 0.0.0.0:$PORT -t public
+web: php artisan db:seed --force && php artisan storage:link && php -S 0.0.0.0:$PORT -t public
