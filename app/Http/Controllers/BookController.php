@@ -239,7 +239,7 @@ class BookController extends Controller
             'Image'         => $filename
         ]);
     
-        return redirect('/home');
+        return redirect('/admin');
     }
 
     public function hapus($id)
