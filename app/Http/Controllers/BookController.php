@@ -150,7 +150,7 @@ class BookController extends Controller
     public function riwayat()
     {
         $data = DB::table('peminjaman')
-                    ->join('books', 'peminjaman.idbuku', '=', 'books.idbuku')
+                    ->join('books', 'peminjaman.id_buku', '=', 'books.idbuku')
                     ->where('username', session()->get('username'))
                     ->get();
 
