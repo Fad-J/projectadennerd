@@ -223,22 +223,22 @@ class BookController extends Controller
     public function tambah(Request $request)
     {
         $filename = null;
-            if ($request->hasFile('file')) {
-                $filename = time().'_'.
-                    $request->file('file')
-                    ->getClientOriginalName();
-                $request->file('file')->storeAs('public', $filename);
-            }
-        
+        if ($request->hasFile('file')) {
+            $filename = time().'_'.
+                $request->file('file')
+                ->getClientOriginalName();
+            $request->file('file')->storeAs('public', $filename);
+        }
+    
         DB::table('books')->insert([
-            'idbuku' => $request->idbuku,
-            'NamaBuku' => $request->NamaBuku,
+            'idbuku'        => $request->idbuku,
+            'NamaBuku'      => $request->NamaBuku,
             'NamaPengarang' => $request->NamaPengarang,
-            'Kategori' => $request->Kategori,
-            'qty' => $request->qty,
-            'Image' => $filename
+            'Kategori'      => $request->Kategori,
+            'qty'           => $request->qty,
+            'Image'         => $filename
         ]);
-
+    
         return redirect('/home');
     }
 
